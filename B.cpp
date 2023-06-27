@@ -2,18 +2,27 @@
 using namespace std;
 
 #define file(name) if (fopen(name".INP", "r")){freopen(name".INP", "r", stdin); freopen(name".OUT", "w", stdout);}
-#define all(v) v.begin(),v.end()
-#define pb(a) push_back(a)
+
 const int maxn = 2e5 + 7;
 const int inf = 1e9 + 7;
 typedef long long ll;
 void solution(){
 
-	int n, id[maxn];
-	cin >> n;
-	for (int i = 1; i <= n; i++){
-		int nums; cin >> nums;
+	int n, m;
+	cin >> n>>m;
+	int ans=0;
+	for (int j = 0; j < 3; j++){
+		vector<int> s1(n);
+		bool ok=1;
+		for (int i = 0; i < n; i++){
+			cin>>s1[i];
+			if((m|s1[i])== m && ok){
+				ans|=s1[i];
+			}else ok=0;
+		}
 	}
+	if(ans==m) cout<<"Yes"<<"\n";
+	else cout<<"No"<<"\n";
 	
 }
 

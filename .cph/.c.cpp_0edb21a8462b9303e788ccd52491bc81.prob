@@ -1,0 +1,1 @@
+{"name":"Local: c","url":"c:\\Users\\Pankaj Vishwakarma\\Desktop\\CP\\c.cpp","tests":[{"id":1687277156930,"input":"1\n4\n4 2 1\n4 2 3\n2 1 3\n4 1 3","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Pankaj Vishwakarma\\Desktop\\CP\\c.cpp","group":"local","local":true}
