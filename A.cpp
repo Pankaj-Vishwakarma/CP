@@ -10,26 +10,7 @@ typedef long long ll;
 
 
 void solution(){
-    ll n,m;
-    cin>>n>>m;
-    vector<ll> brd(n), op(m);
-    for(ll i=0;i<n; i++){ 
-		ll temp;
-		cin>>temp;
-		brd[i]=temp;
-	}
-    for(ll i=0;i<m; i++){ 
-		ll temp;
-		cin>>temp;
-		op[i]=temp;
-	}
-    sort(all(brd));
-    sort(all(op));
-    for(ll j=0, i=0; j<m; j++){
-        if(i==n) i=0;
-        brd[i++]=op[j];
-    }
-    cout<< accumulate(all(brd),0)<<"\n";
+	
 }
  
 signed main(){
