@@ -10,7 +10,19 @@ void solution(){
 
 	int n, m;
 	cin >> n>>m;
-
+	int ans=0;
+	for (int j = 0; j < 3; j++){
+		vector<int> s1(n);
+		bool ok=1;
+		for (int i = 0; i < n; i++){
+			cin>>s1[i];
+			if((m|s1[i])== m && ok){
+				ans|=s1[i];
+			}else ok=0;
+		}
+	}
+	if(ans==m) cout<<"Yes"<<"\n";
+	else cout<<"No"<<"\n";
 	
 }
 

@@ -23,18 +23,7 @@ void solution(){
             else if(v[i][0]!=t)v[i].push_back(t);
         }
     }
-    vector<int> ans;
-    // if(v[0][0]==v[1][0]) ans.pb(v[0][1]), ans.pb(v[0][0]);
-    // else if(v[0][0]==v[1][1]) ans.push_back(v[0][1]), ans.pb(v[0][0]);
-    // else ans.push_back(v[0][0]), ans.pb(v[1][0]);
-    for(int i=1;i<n-1;i++){
-        if(v[i][0]==ans.back()) ans.push_back(v[i][1]);
-        else ans.push_back(v[i][0]);
-    }
-    for(auto it: ans){
-        cout<<it<<" ";
-    }
-    cout<<"\n";
+
 }
  
 signed main(){
