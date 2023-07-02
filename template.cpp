@@ -4,16 +4,26 @@ using namespace std;
 #define file(name) if (fopen(name".INP", "r")){freopen(name".INP", "r", stdin); freopen(name".OUT", "w", stdout);}
 #define all(v) v.begin(),v.end()
 #define pb(a) push_back(a)
-const int maxn = 2e5 + 7;
-const int inf = 1e9 + 7;
 typedef long long ll;
-void solution(){
 
-	int n, id[maxn];
-	cin >> n;
-	for (int i = 1; i <= n; i++){
-		int nums; cin >> nums;
+vector<bool> sieve_of_eratosthenes(int n)
+{
+	vector<bool> is_prime(n+1,true);
+	is_prime[0]= false, is_prime[1]=false;
+	for (int p = 2; p * p <= n; p++) {
+		if (is_prime[p]) {
+			for (int i = p * p; i <= n; i += p) {
+				is_prime[i] = false;
+			}
+		}
 	}
+	return is_prime;
+}
+
+
+void solution(){
+	int n; cin>>n;
+	
 	
 }
 

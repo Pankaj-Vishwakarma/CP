@@ -2,41 +2,28 @@
 using namespace std;
 
 #define file(name) if (fopen(name".INP", "r")){freopen(name".INP", "r", stdin); freopen(name".OUT", "w", stdout);}
+#define all(v) v.begin(),v.end()
+#define pb(a) push_back(a)
+typedef long long ll;
 
-const int maxn = 2e5 + 7;
-const int inf = 1e9 + 7;
+vector<bool> sieve_of_eratosthenes(int n)
+{
+	vector<bool> is_prime(n+1,true);
+	is_prime[0]= false, is_prime[1]=false;
+	for (int p = 2; p * p <= n; p++) {
+		if (is_prime[p]) {
+			for (int i = p * p; i <= n; i += p) {
+				is_prime[i] = false;
+			}
+		}
+	}
+	return is_prime;
+}
+
 
 void solution(){
-
-	int n, id[maxn];
-	cin >> n;
-	long long sum2 = 0;
-    long long opn = 0;
-
-    int ok = 0;
-    for (int i = 0; i < n; i++) {
-        int val;
-        cin >> val;
-
-        if (val <= 0) {
-            if (val < 0)
-                ok = 1;
-        } else {
-            if (ok)
-                opn++;
-
-            ok = 0;
-        }
-        if (val < 0)
-            val = val * -1;
-
-        sum2 = sum2 + (long long)val;
-    }
-    if (ok)
-        opn++;
-
-    cout << sum2 << " " << opn << endl;
-
+	int n; cin>>n;
+	
 	
 }
 

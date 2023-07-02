@@ -2,27 +2,28 @@
 using namespace std;
 
 #define file(name) if (fopen(name".INP", "r")){freopen(name".INP", "r", stdin); freopen(name".OUT", "w", stdout);}
-
-const int maxn = 2e5 + 7;
-const int inf = 1e9 + 7;
+#define all(v) v.begin(),v.end()
+#define pb(a) push_back(a)
 typedef long long ll;
-void solution(){
 
-	int n, m;
-	cin >> n>>m;
-	int ans=0;
-	for (int j = 0; j < 3; j++){
-		vector<int> s1(n);
-		bool ok=1;
-		for (int i = 0; i < n; i++){
-			cin>>s1[i];
-			if((m|s1[i])== m && ok){
-				ans|=s1[i];
-			}else ok=0;
+vector<bool> sieve_of_eratosthenes(int n)
+{
+	vector<bool> is_prime(n+1,true);
+	is_prime[0]= false, is_prime[1]=false;
+	for (int p = 2; p * p <= n; p++) {
+		if (is_prime[p]) {
+			for (int i = p * p; i <= n; i += p) {
+				is_prime[i] = false;
+			}
 		}
 	}
-	if(ans==m) cout<<"Yes"<<"\n";
-	else cout<<"No"<<"\n";
+	return is_prime;
+}
+
+
+void solution(){
+	int n; cin>>n;
+	
 	
 }
 
